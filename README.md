@@ -1,4 +1,4 @@
-Student Management & B2C E-Commerce Web Application
+#Student Management & B2C E-Commerce Web Application
 📌 Overview
 
 This project is a web-based ASP.NET Core MVC application developed for academic purposes. It integrates a Student Management System and a Business-to-Consumer (B2C) E-Commerce platform into a single, cohesive web application.
