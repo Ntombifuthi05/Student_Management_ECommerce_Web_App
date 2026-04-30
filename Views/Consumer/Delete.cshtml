@@ -1,0 +1,23 @@
+﻿@model ASPNETCore_DB.Models.Consumer
+
+@{
+    ViewData["Title"] = "Delete Consumer";
+}
+
+<div class="container mt-4">
+    <h2>Delete Confirmation</h2>
+
+    <div class="mb-3">
+        <img src="@Model.ImagePath" width="100" height="100" class="rounded" />
+    </div>
+
+    <h4>Are you sure you want to delete this consumer?</h4>
+    <p><strong>Name:</strong> @Model.Name</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+
+    <form asp-action="DeleteConfirmed" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

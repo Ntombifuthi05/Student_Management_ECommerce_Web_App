@@ -1,0 +1,248 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@* <div id="carouselExampleIndicators" class="carousel slide mb-4" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/images/service1.jpg" class="d-block w-100" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img src="~/images/service2.png" class="d-block w-100" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img src="~/images/service3.png" class="d-block w-100" alt="Third slide">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div> *@
+
+<div class="text-center">
+    <h1>User Logger In Information: </h1>
+    <p>User Id: @ViewData["UserID"]</p>
+    <p>User Name: @ViewData["UserName"]</p>
+    <p>User Role: @ViewData["UserRole"]</p>
+</div>
+
+<div class="container-fluid border-bottom mb-3">
+    <h1>Sharp Brain Sharp Minds Sharp Future</h1>
+    <br />
+</div>
+<div class="container-fluid">
+
+    @* <div class="row">
+        <div class="col-md-8">
+            <h2>Welcome to the Student Management System</h2>
+            <br />
+
+            <p class="justify-content-">
+                •	ASP.NET Core MVC web solution that utilizes an SQLite database to port information to and from the web interface by means of the View, Controller and Model framework and Entity Framework Core.
+            </p>
+            <p class="justify-content-evenly">
+                •	The exercise will allow you to dynamically create a database and datatable by means of the ASP.NET core MVC functionality and Entity Framework code first design.
+            </p>
+            <p class="justify-content-evenly">
+                •	It will demonstrate the creation of a model, the view and the code required for the controller to pass information from the database to the interface and then from the interface back to the database.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+
+            <h2>Build it from scratch</h2>
+
+            <p class="justify-content-evenly">You can build the application by following the steps in a series of exercises made available on eThuto -> SOD226C.</p>
+
+            <p><a class="btn btn btn-primary" href="https://ethuto.cut.ac.za/">Log in &raquo;</a></p>
+
+        </div>
+    </div>
+</div> *@
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Welcome to Sharp Brain Sharp Minds Sharp Future</h2>
+                <br />
+
+                <p class="justify-content-">
+                    We believe that every student has the power to shape a bright future — all they need are the right tools, the right mindset, and a spark of motivation. That’s why we’ve built a platform filled with free online books focused on career guidance, self-improvement, and motivation.<br />
+
+                    Whether you’re exploring your first career options, trying to stay inspired through school, or simply looking to grow personally and professionally — you’re in the right place.<br />
+
+                    <bold>✨ Sharpen your brain. Empower your mind. Create your future.</bold>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+@* //2.3 Additional Functionalities *@
+@* <div id="productCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 800px; margin: auto;">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+            <img src="DefaultPic.png" class="d-block w-100" alt="Promo 1" style="height: 400px; object-fit: cover;">
+    </div>
+    <div class="carousel-item">
+            <img src=" C:\Users\picom\Downloads\kemal-kozbaev-LgLqmEZy0Mo-unsplash.jpg" class="d-block w-100" alt="Promo 2" style="height: 400px; object-fit: cover;">
+    </div>
+    <div class="carousel-item">
+            <img src=" C:\Users\picom\Downloads\quan-jing-HSzTjbAF5Qs-unsplash.jpg" class="d-block w-100" alt="Promo 3" style="height: 400px; object-fit: cover;">
+    </div>
+  </div> *@
+
+  <!-- Controls -->
+  @* <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button> *@
+
+  <!-- Pause Button -->
+ @*  <button onclick="pauseCarousel()" class="btn btn-outline-secondary mt-3">Pause Carousel</button>
+</div>
+
+<script>
+  let carousel = document.querySelector('#productCarousel');
+  let carouselInstance = new bootstrap.Carousel(carousel);
+  
+  function pauseCarousel() {
+    carouselInstance.pause();
+  }
+</script> *@
+
+@* //End of 2.3 *@
+
+@* modified 2.3 *@
+<div id="mainCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner rounded shadow">
+
+        <div class="carousel-item active">
+            <img src="~/images/service1.jpeg" class="d-block w-100" alt="Service 1">
+        </div>
+
+        <div class="carousel-item">
+            <img src="~/images/service2.png" class="d-block w-100" alt="Service 2">
+        </div>
+
+        <div class="carousel-item">
+            <img src="~/images/service3.png" class="d-block w-100" alt="Service 3">
+        </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+
+        <script>
+            let carousel = document.querySelector('#productCarousel');
+            let carouselInstance = new bootstrap.Carousel(carousel);
+
+            function pauseCarousel() {
+                carouselInstance.pause();
+            }
+        </script> 
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+    </div>
+</div>
+@* end of modified 2.3 *@
+
+<section class="mt-5">
+    <h2>Available Books</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="~/images/BookPic(1).jpg" class="card-img-top" alt="Book Picture">
+                <div class="card-body">
+                    <h5 class="card-title">Title: Engineering Change Management in Distruted Environment with PDM/PLM Support</h5>
+                    <p class="card-text">Author: Joze Tavcar, Joze Duhovnik</p>
+                    <a href="https://www.free-ebooks.net/engineering-textbooks/Engineering-Change-Management-in-Distruted-Environment-with-PDM-PLM-Support">Available Here</a>
+                </div>
+            </div>
+        </div>
+        <!-- Add more cards as needed -->
+        <div class="col-md-4">
+            <img src="~/images/BookPic(2).jpg" class="card-img-top" alt="Book Picture">
+            <div class="card-body">
+                <h5 class="card-title">Title: A First Course in Electrical and Computer Engineering</h5>
+                <p class="card-text">Author:  Louis Scharf</p>
+                <a href="https://www.free-ebooks.net/engineering/A-First-Course-in-Electrical-and-Computer-Engineering">Available Here</a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <img src="~/images/BookPic(3).jpg" class="card-img-top" alt="Book Picture">
+            <div class="card-body">
+                <h5 class="card-title">Title: 10 Great Ways to Self-Esteem</h5>
+                <p class="card-text">Author: James Vanstone</p>
+                <a href="https://www.free-ebooks.net/health/10-Great-Ways-to-Self-Esteem">Available Here</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@* //End of book part *@
+
+<section class="mt-5">
+    <h2>Upcoming Promotions</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F841579019%2F1821350617523%2F1%2Foriginal.20240904-164825?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.005&fp-y=0.005&s=03ac5f49fa02c3c4b2b1e1166451b29e" class="card-img-top" alt="Promo">
+                <div class="card-body">
+                    <h5 class="card-title">Collaboration With AI Professionals</h5>
+                    <p class="card-text">Date & Time: Saturday, May 10 · 5:30 - 6:30am SAST</p>
+                    <a href="https://www.eventbrite.com/e/collaboration-with-ai-professionals-tickets-1345648263179?aff=erellivmlt" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Add more cards as needed -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1020391113%2F16497637699%2F1%2Foriginal.20250430-185117?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.136363636364&fp-y=0.470297029703&s=6d63b3fe8ef7f2e18699fe220ff4b165" class="card-img-top" alt="Promo">
+                <div class="card-body">
+                    <h5 class="card-title">Collaborate: Get Actual Paying Clients Through Referrals</h5>
+                    <p class="card-text">Date & Time: May 8 · 5pm - May 11 · 2am SAST</p>
+                    <a href="https://www.eventbrite.com/e/collaborate-get-actual-paying-clients-through-referrals-tickets-1344673617989?aff=ebdssbdestsearch" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1018005563%2F1887358541083%2F1%2Foriginal.20250428-092800?w=940&auto=format%2Ccompress&q=75&sharp=10&s=10ae32e7cb0bf8c4766d8e9b99f15dec" class="card-img-top" alt="Promo">
+                <div class="card-body">
+                    <h5 class="card-title">Build a System That Works: Simplify Team Collaboration with Morningmate</h5>
+                    <p class="card-text">Date & Time: May 8 · 1pm - June 10 · 1:45pm SAST</p>
+                    <a href="https://www.eventbrite.com/e/build-a-system-that-works-simplify-team-collaboration-with-morningmate-tickets-1348469050229?aff=erellivmlt" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

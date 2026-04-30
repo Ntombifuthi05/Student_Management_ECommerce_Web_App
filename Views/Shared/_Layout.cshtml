@@ -1,0 +1,125 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using ASPNETCore_DB.Models
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sharp Brain Sharp Minds Sharp Future</title>
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ASPNETCore_DB.styles.css" asp-append-version="true" />
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #f2f2f2/* ;
+             /* background-color: hotpink; */
+            Light grey
+        }
+        .navbar-custom {
+            background: linear-gradient(45deg, #007bff, #6610f2);
+        }
+
+        .navbar-custom .nav-link {
+            color: #ffffff !important;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .navbar-custom .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+        }
+
+        footer a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffc107;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-custom navbar-dark mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Sharp Brain Sharp Minds Sharp Future</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Student" asp-action="Index">Database</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="About" asp-action="Index">About</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a></li>
+
+                        @if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Student" asp-action="Create">Enroll</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Student" asp-action="Details">Your Details</a></li>
+                        }
+                        else if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Student" asp-action="Index">Students</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Consumer" asp-action="Index">Consumers</a></li>
+                        }
+                        else if (SignInManager.IsSignedIn(User) && User.IsInRole("Consumer"))
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Consumer" asp-action="Create">Enroll</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Consumer" asp-action="Details">Your Details</a></li>
+                        }
+                    </ul>
+                    <ul class="navbar-nav">
+                        <partial name="_LoginPartial" />
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-4">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="text-center py-4">
+        <div class="container">
+            <p>© 2025 Sharp Brain Sharp Minds Sharp Future. All rights reserved.</p>
+            <p>
+                <a href="https://www.linkedin.com" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a> |
+                <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i> Facebook</a> |
+                <a href="https://www.twitter.com" target="_blank"><i class="bi bi-twitter"></i> Twitter</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

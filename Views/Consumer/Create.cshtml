@@ -1,0 +1,28 @@
+﻿@model ASPNETCore_DB.Models.Consumer
+
+@{
+    ViewData["Title"] = "Create Consumer";
+}
+
+<div class="container mt-4">
+    <h2>Create New Consumer</h2>
+
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="imageFile" class="form-label">Upload Image</label>
+            <input type="file" name="imageFile" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+        <a asp-action="Index" class="btn btn-secondary">Back</a>
+    </form>
+</div>

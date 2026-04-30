@@ -1,0 +1,36 @@
+﻿@model ASPNETCore_DB.Models.Consumer
+
+@{
+    ViewData["Title"] = "Edit Consumer";
+}
+
+<div class="container mt-4">
+    <h2>Edit Consumer</h2>
+
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <p>Current Image:</p>
+            <img src="@Model.ImagePath" width="80" height="80" class="rounded" />
+        </div>
+
+        <div class="mb-3">
+            <label for="imageFile" class="form-label">Replace Image</label>
+            <input type="file" name="imageFile" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

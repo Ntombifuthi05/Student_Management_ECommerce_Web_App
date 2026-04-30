@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ASPNETCore_DB.Models.Consumer>
+
+@{
+    ViewData["Title"] = "Consumers";
+}
+
+<div class="container mt-4">
+    <h2>Consumers</h2>
+
+    <form asp-action="Index" method="get" class="mb-3">
+        <input type="text" name="searchString" class="form-control w-50 d-inline" placeholder="Search consumers..." />
+        <button type="submit" class="btn btn-primary ms-2">Search</button>
+        <a asp-action="Create" class="btn btn-success float-end">Create New</a>
+    </form>
+
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Profile</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="@item.ImagePath" width="60" height="60" class="rounded-circle" />
+                    </td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
